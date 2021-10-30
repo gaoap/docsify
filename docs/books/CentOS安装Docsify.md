@@ -1,6 +1,8 @@
-# 服务器安装npm(centOS) <!-- {docsify-ignore-all} -->
+# CentOS安装Docsity  <!-- {docsify-ignore-all} -->
 
-下载
+## 第一步安装NPM: 
+
+下载：
 
 ```bash
 cd /usr/local/
@@ -9,25 +11,25 @@ wget https://npm.taobao.org/mirrors/node/v10.14.1/node-v10.14.1-linux-x64.tar.gz
 
 解压
 
-```
+```bash
 tar -xvf node-v10.14.1-linux-x64.tar.gz
 ```
 
 转移
 
-```
+```bash
 mv node-v10.14.1-linux-x64 node
 ```
 
 配置环境变量
 
-```
+```bash
 vim /etc/profile
 ```
 
 注意目录位置：
 
-```
+```bash
 #set for nodejs  
 export NODE_HOME=/usr/local/node  
 export PATH=$NODE_HOME/bin:$PATH
@@ -35,7 +37,7 @@ export PATH=$NODE_HOME/bin:$PATH
 
 生效配置文件
 
-```
+```bash
 source /etc/profile
 node -v
 npm -v
@@ -43,21 +45,21 @@ npm -v
 
 npm阿里云镜像源加速
 
-```text
+```bash
 npm config set registry "https://registry.npm.taobao.org"
 ```
 
 验证npm设置阿里云源是否设置成功
 
-```text
+```bash
 npm config get registry
 ```
 
-![img](https://pic3.zhimg.com/80/v2-f376726bd6089cf267114e78e78a28ee_720w.png)
+返回 https://registry.npm.taobao.org 即表示设置阿里源成功
 
+以上npm安装和设置完毕。
 
-
- [快速开始](https://docsify.js.org/#/zh-cn/quickstart?id=快速开始)
+## 第二步：安装Docsify
 
 推荐全局安装 `docsify-cli` 工具，可以方便地创建及在本地预览生成的文档。
 
@@ -65,7 +67,7 @@ npm config get registry
 npm i docsify-cli -g
 ```
 
-## [初始化项目](https://docsify.js.org/#/zh-cn/quickstart?id=初始化项目)
+初始化项目
 
 如果想在项目的 `./docs` 目录里写文档，直接通过 `init` 初始化项目。
 
@@ -73,7 +75,7 @@ npm i docsify-cli -g
 docsify init ./docs
 ```
 
-## [开始写文档](https://docsify.js.org/#/zh-cn/quickstart?id=开始写文档)
+开始写文档
 
 初始化成功后，可以看到 `./docs` 目录下创建的几个文件
 
@@ -81,15 +83,21 @@ docsify init ./docs
 - `README.md` 会做为主页内容渲染
 - `.nojekyll` 用于阻止 GitHub Pages 忽略掉下划线开头的文件
 
-直接编辑 `docs/README.md` 就能更新文档内容，当然也可以[添加更多页面](https://docsify.js.org/#/zh-cn/more-pages)。
+直接编辑 docs/README.md 就能更新文档内容，当然也可以添加更多页面。
 
+本地预览命令：
 
+```
+docsify serve docs
+```
 
+默认端口为：3000
 
+浏览器访问: http://IP:3000/ 即可访问。
 
-## Docker
+## 第三步：Docker方式安装
 
-- 创建 docsify 的文件
+1. 创建 docsify 的文件
 
 你需要准备好初始文件，而不是在容器中制作。
 请参阅 快速开始 部分，了解如何手动或使用 [docsify-cli](https://github.com/docsifyjs/docsify-cli) 创建这些文件。
@@ -99,9 +107,11 @@ index.html
 README.md
 ```
 
-- 创建 Dockerfile
+1. 创建 Dockerfile
 
-```dockerfile
+创建Docker需要提前准备好index.html和README.md文件。
+
+```docker
 FROM node:latest
 LABEL description="A demo Dockerfile for build Docsify."
 WORKDIR /docs
@@ -110,7 +120,8 @@ EXPOSE 3000/tcp
 ENTRYPOINT docsify serve .
 ```
 
-创建成功后当前的目录结构应该是这样的：
+2. 创建成功后当前的目录结构应该是这样的：
+
 
 ```sh
 index.html
@@ -118,14 +129,17 @@ README.md
 Dockerfile
 ```
 
-- 构建 docker 镜像
+3. 构建 docker 镜像
 
-```sh
+```bash
 docker build -f Dockerfile -t docsify/demo .
 ```
 
-- 运行 docker 镜像
+4. 运行 docker 镜像
 
-```sh
+```bash
 docker run -itp 3000:3000 --name=docsify -v $(pwd):/docs docsify/demo
 ```
+
+浏览器访问: http://IP:3000/ 即可访问。
+
