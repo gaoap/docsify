@@ -135,7 +135,11 @@ public class MyBatisPlusGenerator {
 
 利用代码生成器，基础业务代码生成完毕。
 
-5、参靠业务sql如下：
+6、参考简图结构：
+
+![image-20211031155946940](https://i.loli.net/2021/10/31/mq95woIUOrAGT3X.png)
+
+7、参考业务sql如下：
 
 ```sql
 CREATE TABLE `opf_upm_menu` (
@@ -243,6 +247,3 @@ CREATE TABLE `opf_upm_user_role_relation` (
 
 ```
 
-参考简图结构：
-
-![image-20211031155946940](https://i.loli.net/2021/10/31/mq95woIUOrAGT3X.png)
