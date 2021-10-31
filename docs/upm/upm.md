@@ -39,7 +39,7 @@
 
 2、搭建完项目后，工程目录结果如下：(仅供参考)
 
-![image-20211031151221708](https://i.loli.net/2021/10/31/ob87ijUYhq5avNJ.png)
+![image-20211031151221708](ob87ijUYhq5avNJ.png )
 
 3、创建配置文件generator.properties
 
@@ -136,13 +136,13 @@ public class MyBatisPlusGenerator {
 
 执行MyBatisPlusGenerator时，根据提示“请输入表名称？逻辑为'%tableName%':”，输入表名称，即可自动生成基础代码。如：
 
-![image-20211031152702265](https://i.loli.net/2021/10/31/wlBrRq6VemxEvD8.png)
+![image-20211031152702265](wlBrRq6VemxEvD8.png)
 
 利用代码生成器，基础业务代码生成完毕。
 
 6、参考简图结构：
 
-![image-20211031155946940](https://i.loli.net/2021/10/31/mq95woIUOrAGT3X.png)
+![image-20211031155946940](mq95woIUOrAGT3X.png)
 
 7、参考业务sql如下：
 
