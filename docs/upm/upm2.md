@@ -22,7 +22,7 @@
 server:
   #程序启动服务的端口号
   port: 9021
-  #spring:  #数据库的配置,springboot默认引入com.zaxxer.hikari.HikariDataSource。不需要额外添加依赖
+spring:  #数据库的配置,springboot默认引入com.zaxxer.hikari.HikariDataSource。不需要额外添加依赖
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -41,6 +41,8 @@ jasypt: ##需要引入以来jasypt-spring-boot-starter
     # 加密算法设置 3.0.0 以后
     algorithm: PBEWithMD5AndDES
     iv-generator-classname: org.jasypt.iv.NoIvGenerator
+mybatis-plus:
+  mapper-locations: classpath:**/*Mapper.xml
 ```
 
 以上代码中的说明已经非常详细。只是需要注意jasypt的使用需要引入依赖：
@@ -117,3 +119,56 @@ public class JasyptUtilTest {
 ```
 
 以上数据库配置完成。也完成了数据库账户密码的加密保护。不过在实际生产环境中，建议加密盐不要放在配置文件中，而是在启动程序时指定，例如增加启动参数：  -Djasypt.encryptor.password=jasypt 来替代。
+
+4、增加MyBatis-Plus配置及依赖
+
+引入依赖：
+
+```xml
+        <!--MySQL驱动-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <!--mybatis自动装载-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+        <!--mybatis-plus 相关依赖 -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.4.3.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+```
+
+新建package:com.gaoap.opf.upm.conf。创建类MybatisPlusConfig.java
+
+```java
+/**
+ * 指定mapper的路径，如：src/main/java/com/gaoap/opf/upm/mapper
+ * mapper类上要增加@Mapper注解，否则可能会出现找不到mapper的情况。
+ */
+@Configuration
+@EnableTransactionManagement
+@MapperScan(basePackages = {"com.gaoap.opf.upm.mapper"})//, annotationClass = Mapper.class)
+public class MybatisPlusConfig {
+    // MybatisPlus分页增强插件
+    @Bean
+    public MybatisPlusInterceptor mybatisPlusInterceptor() {
+        MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
+        interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
+        return interceptor;
+    }
+}
+```
+
+至此，MyBatis-Plus的基本配置完成。后面就可以开始基本编写业务的CRUD操作了。

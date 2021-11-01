@@ -142,7 +142,7 @@ public class MyBatisPlusGenerator {
 
 6、参考简图结构：
 
-![image-20211031155946940](mq95woIUOrAGT3X.png)
+![](image-20211101091252819.png)
 
 7、参考业务sql如下：
 
@@ -173,6 +173,7 @@ CREATE TABLE `opf_upm_resource` (
   `modify_time` datetime DEFAULT NULL COMMENT '最后更新时间',
   `create_user` bigint(20) DEFAULT NULL COMMENT '创建人',
   `modify_user` bigint(20) DEFAULT NULL COMMENT '最后修改人',
+  `sub_id` bigint(20) DEFAULT NULL COMMENT '子系统ID',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COMMENT='后台资源表';
 
@@ -205,6 +206,9 @@ CREATE TABLE `opf_upm_role_menu_relation` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `role_id` bigint(20) DEFAULT NULL COMMENT '角色ID',
   `menu_id` bigint(20) DEFAULT NULL COMMENT '菜单ID',
+  `modify_time` datetime DEFAULT NULL COMMENT '最后更新时间',
+  `create_user` bigint(20) DEFAULT NULL COMMENT '创建人',
+  `modify_user` bigint(20) DEFAULT NULL COMMENT '最后修改人',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=utf8 COMMENT='后台角色菜单关系表';
 
@@ -212,8 +216,24 @@ CREATE TABLE `opf_upm_role_resource_relation` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `role_id` bigint(20) DEFAULT NULL COMMENT '角色ID',
   `resource_id` bigint(20) DEFAULT NULL COMMENT '资源ID',
+  `modify_time` datetime DEFAULT NULL COMMENT '最后更新时间',
+  `create_user` bigint(20) DEFAULT NULL COMMENT '创建人',
+  `modify_user` bigint(20) DEFAULT NULL COMMENT '最后修改人',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=216 DEFAULT CHARSET=utf8 COMMENT='后台角色资源关系表';
+
+CREATE TABLE `opf_upm_subsystem` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `sub_code` varchar(64) DEFAULT NULL COMMENT '系统编号',
+  `sub_name` varchar(64) DEFAULT NULL COMMENT '系统名称',
+  `status` int(1) DEFAULT '1' COMMENT '帐号启用状态：0->禁用；1->启用',
+  `note` varchar(500) DEFAULT NULL COMMENT '备注信息',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `create_user` bigint(20) DEFAULT NULL COMMENT '创建人',
+  `modify_user` bigint(20) DEFAULT NULL COMMENT '最后修改人',
+  `modify_time` datetime DEFAULT NULL COMMENT '最后修改时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='子系统记录表';
 
 CREATE TABLE `opf_upm_user` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -239,6 +259,9 @@ CREATE TABLE `opf_upm_user_login_log` (
   `ip` varchar(64) DEFAULT NULL,
   `address` varchar(100) DEFAULT NULL,
   `user_agent` varchar(100) DEFAULT NULL COMMENT '浏览器登录类型',
+  `modify_time` datetime DEFAULT NULL COMMENT '最后更新时间',
+  `create_user` bigint(20) DEFAULT NULL COMMENT '创建人',
+  `modify_user` bigint(20) DEFAULT NULL COMMENT '最后修改人',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=287 DEFAULT CHARSET=utf8 COMMENT='后台用户登录日志表';
 
@@ -246,9 +269,11 @@ CREATE TABLE `opf_upm_user_role_relation` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `user_id` bigint(20) DEFAULT NULL,
   `role_id` bigint(20) DEFAULT NULL,
+  `modify_time` datetime DEFAULT NULL COMMENT '最后更新时间',
+  `create_user` bigint(20) DEFAULT NULL COMMENT '创建人',
+  `modify_user` bigint(20) DEFAULT NULL COMMENT '最后修改人',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8 COMMENT='后台用户和角色关系表';
-
 
 ```
 
