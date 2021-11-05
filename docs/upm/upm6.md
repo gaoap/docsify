@@ -170,3 +170,14 @@ mvn clean package docker:build -DskipTests
 mvn docker:push -DskipTests 
 ```
 
+启动docker镜像命令：
+
+```shell
+docker run  --name opf-upm -d -p 9021:9021  gaoap/opf-upm:0.0.1-SNAPSHOT
+```
+
+期中：
+
+gaoap/opf-upm:0.0.1-SNAPSHOT 为发布的镜像名称
+
+-p 9021:9021  格式为 -p 对外服务暴露端口:docker内部服务端口

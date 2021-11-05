@@ -1,4 +1,4 @@
-# effectivejava学习笔记（一）
+# Effective Java学习笔记（一）
 
 ## 第一条：用静态工厂方法代替构造器
 

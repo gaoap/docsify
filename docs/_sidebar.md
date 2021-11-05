@@ -20,4 +20,6 @@
 - 记录
   - [安装hugo](books/安装hugo.md)
   - [CentOS安装Docsify](books/CentOS安装Docsify.md)
+  - [Nginx部署](books/nginx.md)
+  - [VUE部署](books/vue.md)
 
