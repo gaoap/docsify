@@ -184,3 +184,52 @@ gaoap/opf-upm:0.0.1-SNAPSHOT 为发布的镜像名称
 
 -p 9021:9021  格式为 -p 对外服务暴露端口:docker内部服务端口
 
+**补充知识，**
+
+springboot官方发布docker镜像配置：个人使用时感觉非常慢，可能和本人的网络有关系。
+
+这个方式不需要自己编写Dockerfile文件。
+
+```xml
+<build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <image>
+                        <name>registry.cn-beijing.aliyuncs.com/gaoap/${project.name}:${project.version}</name>
+                        <!-- 执行完build 自动push -->
+                        <publish>true</publish>
+                        <!-- 拉取镜像的策略，可选的值：ALWAYS, NEVER, IF_NOT_PRESENT -->
+                        <pullPolicy>IF_NOT_PRESENT</pullPolicy>
+                    </image>
+                    <!--配置构建宿主机信息，本机不用配置-->
+                    <docker>
+                        <!--远程docker daemon的连接地址和端口-->
+                        <host>http://192.168.31.82:2375</host>
+                        <!--如果使用https协议需要设置为true-->
+                        <tlsVerify>false</tlsVerify>
+                        <publishRegistry>
+                            <!--registry.cn-beijing.aliyuncs.com 账号密码-->
+                            <username>username</username>
+                            <password>password</password>
+                            <url>registry.cn-beijing.aliyuncs.com</url>
+                        </publishRegistry>
+                    </docker>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+```
+
+
+
+执行命令：参考 mvn spring-boot:build-image  -DskipTests
+
+启动docker镜像命令：
+
+```shell
+docker run  --name opf-upm -d -p 9021:9021  registry.cn-beijing.aliyuncs.com/gaoap/opf-upm:0.0.1-SNAPSHOT
+```
+
