@@ -4,7 +4,9 @@
 
 - [Effective Java读书笔记](effectivejava/)
 
-  - [读书笔记（一）](effectivejava/effectivejava1.md)
+  - [创建和销毁对象](effectivejava/effectivejava1.md)
+
+  - [所有对象都通用的方法](effectivejava/effectivejava2.md)
 
     
 
@@ -20,6 +22,6 @@
 - 记录
   - [安装hugo](books/安装hugo.md)
   - [CentOS安装Docsify](books/CentOS安装Docsify.md)
-  - [Nginx部署](books/nginx.md)
-  - [VUE部署](books/vue.md)
+  - [Nginx部署](tools/nginx.md)
+  - [VUE部署](tools/vue.md)
 

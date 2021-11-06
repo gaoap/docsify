@@ -1,4 +1,4 @@
-# Effective Java学习笔记（一）
+# Effective Java学习笔记（一）：创建和销毁对象
 
 ## 第一条：用静态工厂方法代替构造器
 
