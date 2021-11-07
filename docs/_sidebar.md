@@ -8,6 +8,8 @@
 
   - [所有对象都通用的方法](effectivejava/effectivejava2.md)
 
+  - [类和接口](effectivejava/effectivejava3.md)
+
     
 
 - [一步一步搭建权限管理系统](upm/)
