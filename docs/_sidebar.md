@@ -10,6 +10,8 @@
 
   - [类和接口](effectivejava/effectivejava3.md)
 
+  - [泛型](effectivejava/effectivejava4.md)
+
     
 
 - [一步一步搭建权限管理系统](upm/)
