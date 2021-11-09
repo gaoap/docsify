@@ -26,6 +26,7 @@
   - [一步一步搭建权限管理系统（六）](upm/upm6.md)
   
 - K8S
+  - [minikube安装](k8s/minikube.md)
   
 - 
   
@@ -35,5 +36,6 @@
   - [CentOS安装Docsify](books/CentOS安装Docsify.md)
   - [Nginx部署](tools/nginx.md)
   - [VUE部署](tools/vue.md)
-  - [MySQL安装]((tools/mysql.md))
+  - [MySQL安装](tools/mysql.md)
+  - [Docker常用命令记录](tools/docker.md)
 
