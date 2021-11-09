@@ -12,6 +12,8 @@
 
   - [泛型](effectivejava/effectivejava4.md)
 
+  - [枚举和注解](effectivejava/effectivejava5.md)
+
     
 
 - [一步一步搭建权限管理系统](upm/)
@@ -23,9 +25,15 @@
   - [一步一步搭建权限管理系统（五）](upm/upm5.md)
   - [一步一步搭建权限管理系统（六）](upm/upm6.md)
   
-- 记录
+- K8S
+  
+- 
+  
+- 一般工具安裝
+  
   - [安装hugo](books/安装hugo.md)
   - [CentOS安装Docsify](books/CentOS安装Docsify.md)
   - [Nginx部署](tools/nginx.md)
   - [VUE部署](tools/vue.md)
+  - [MySQL安装]((tools/mysql.md))
 
