@@ -65,7 +65,17 @@ alias kubectl="minikube kubectl --"
 
 ```
 minikube dashboard
+要从外部访问仪表板，请公开代理，以便可以从任何IP对其进行访问，如下所示。
+然后执行：
+kubectl proxy --address='0.0.0.0' --disable-filter=true
+提示如下：
+W1109 20:54:54.395752   10455 proxy.go:162] Request filter disabled, your proxy is vulnerable to XSRF attacks, please be cautious
+Starting to serve on [::]:8001
+可以通过访问：http://192.168.31.82:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/workloads?namespace=default
+
 ```
+
+补充：netstat -lntp  命令查看本地监听端口。
 
 4、 Deploy applications
 

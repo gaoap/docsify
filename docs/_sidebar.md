@@ -14,6 +14,8 @@
 
   - [枚举和注解](effectivejava/effectivejava5.md)
 
+  - [Lambda和Stream](effectivejava/effectivejava6.md)
+
     
 
 - [一步一步搭建权限管理系统](upm/)
