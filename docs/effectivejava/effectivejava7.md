@@ -364,7 +364,7 @@ formatter.withLocale(Locale.UK);
 ```
 
 因为DateTimeFormatter是一个不可变类，所以不可以修改其属性，同时也就是个线程安全类了。其灵活的创建过程是利用DateTimeFormatterBuilder来实现的。DateTimeFormatter.ofPattern()没有设置打印时的时区
-需要设置时区需要DateTimeFormatter.ofPattern(“yyyy-MM-dd HH:mm:ss”).withZone(ZoneId.of(“GMT”))这样设置。
+需要设置时区需要`DateTimeFormatter.ofPattern(“yyyy-MM-dd HH:mm:ss”).withZone(ZoneId.of(“GMT”))`这样设置。
 
 **SimpleDateFormat并非线程安全**其format()与parse()方法都不是线程安全。
 
