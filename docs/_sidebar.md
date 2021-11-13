@@ -11,6 +11,7 @@
   - [Lambda和Stream](effectivejava/effectivejava6.md)
   - [方法](effectivejava/effectivejava7.md)
   - [通用编程](effectivejava/effectivejava8.md)
+  - [异常](effectivejava/effectivejava9.md)
 
     
 
