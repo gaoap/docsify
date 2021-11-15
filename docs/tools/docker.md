@@ -13,8 +13,8 @@ docker-compose 启动： docker-compose -f opf-docker-compose.yaml up
 systemctl status firewalld.service
 关闭防火墙：
 systemctl stop firewalld service
-systemctl disable firewalld.service，开机禁止防火墙服务器
-systemctl enable firewalld.service，开机启动防火墙服务器
+systemctl disable firewalld.service 开机禁止防火墙服务器
+systemctl enable firewalld.service 开机启动防火墙服务器
 
 
 redis :

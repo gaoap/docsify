@@ -157,6 +157,19 @@ vim /usr/lib/systemd/system/docker.service
 ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock -H tcp://0.0.0.0:2375
 ```
 
+或者：
+
+***修改 vim /etc/docker/daemon.json文件***
+加入
+
+```python
+{
+  "hosts":["tcp://0.0.0.0:2375","unix:///var/run/docker.sock"]
+}
+```
+
+如果这个配置文件有其他配置，逗号隔开即可
+
 重新加载配置文件和启动服务
 
 ```shell

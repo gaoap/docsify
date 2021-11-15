@@ -13,6 +13,7 @@
   - [通用编程](effectivejava/effectivejava8.md)
   - [异常](effectivejava/effectivejava9.md)
   - [并发](effectivejava/effectivejava10.md)
+  - [序列化](effectivejava/effectivejava11.md)
 
     
 

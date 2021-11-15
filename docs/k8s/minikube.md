@@ -39,6 +39,18 @@ k8stest ALL=(ALL)       ALL
 
 ```shell
 minikube start
+minikube start --image-mirror-country='cn' --cpus=4 --memory=6144mb --vm-driver=None
+
+minikube ssh
+进入minikube的环境，设置docker加速
+sudo mkdir -p /etc/docker
+sudo tee /etc/docker/daemon.json <<-'EOF'
+{
+  "registry-mirrors": ["https://XXXXXX.mirror.aliyuncs.com"]
+}
+EOF
+sudo systemctl daemon-reload
+sudo systemctl restart docker
 ```
 
 3、Interact with your cluster
