@@ -160,3 +160,10 @@ docker exec -it opf-ump-vue  /bin/bash
 
 进入docker 容器，查看容器中的nginx情况。
 
+发布到私有仓库：
+
+```
+sudo docker login --username=hi31827733@aliyun.com registry.cn-beijing.aliyuncs.com
+sudo docker push registry.cn-beijing.aliyuncs.com/gaoap/opf-upm-vue:latest
+```
+
