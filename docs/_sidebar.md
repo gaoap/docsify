@@ -29,6 +29,8 @@
 - K8S
   - [minikube安装](k8s/minikube.md)
   
+- MYSQL常用语句
+  - [MySQL导出EXCEL](MySQL/mysql2Excel.md)
   
 - 一般工具安裝
   - [安装hugo](books/安装hugo.md)
