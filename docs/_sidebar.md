@@ -25,7 +25,10 @@
   - [一步一步搭建权限管理系统（五）](upm/upm5.md)
   - [一步一步搭建权限管理系统（六）](upm/upm6.md)
   - [一步一步搭建权限管理系统（七）](upm/upm7.md)
-  
+- EasyExcel
+  - [EasyExcel动态设值字段输出顺序](easyexcel/easyexcel_order_title.md)
+- echarts
+  - [词云图中自定义图形的方式](echarts-wordcloud/wordcloud_type.md) 
 - K8S
   - [minikube安装](k8s/minikube.md)
   
