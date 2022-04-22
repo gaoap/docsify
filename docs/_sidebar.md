@@ -42,4 +42,5 @@
   - [VUE部署](tools/vue.md)
   - [MySQL安装](tools/mysql.md)
   - [Docker常用命令记录](tools/docker.md)
+  - [不安装Docker生成image并发布](tools/no_docker_make_image.md)
 
