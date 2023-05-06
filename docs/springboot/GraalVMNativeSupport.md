@@ -16,7 +16,7 @@
 
 ![image-20230506155429800](image-20230506155429800.png)
 
-下的是.zip的压缩文件。如解压后目录如下：
+下载的是graalvm-ce-java17-windows-amd64-22.3.2.zip的压缩文件。如解压后目录如下：
 
 ![image-20230506160211100](image-20230506160211100.png)
 
@@ -242,7 +242,7 @@ mvn -Pnative native:compile
 ------------------------------------------------------------------------------------------------------------------------
 Produced artifacts:
  E:\gaoap_home\2023\MicroservicesWithAli\MicroservicesWithAli-native-image\target\native-image.build_artifacts.txt (txt)
- 
+
 ========================================================================================================================
 ```java
 E:\gaoap_home\2023\MicroservicesWithAli\MicroservicesWithAli-native-image\target\native-image.exe (executable)
