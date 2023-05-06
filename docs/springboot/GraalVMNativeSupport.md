@@ -235,15 +235,6 @@ mvn -Pnative native:compile
 
  等待执行完毕，出现如下提示：
 
- 467.81KB java.util.concurrent                               616.88KB java.util.HashMap$Node
-  27.01MB for 623 more packages                                5.66MB for 3069 more object types
-------------------------------------------------------------------------------------------------------------------------
-                        3.9s (4.4% of total time) in 40 GCs | Peak RSS: 5.87GB | CPU load: 6.52
-------------------------------------------------------------------------------------------------------------------------
-Produced artifacts:
- E:\gaoap_home\2023\MicroservicesWithAli\MicroservicesWithAli-native-image\target\native-image.build_artifacts.txt (txt)
-
-========================================================================================================================
 ```java
 E:\gaoap_home\2023\MicroservicesWithAli\MicroservicesWithAli-native-image\target\native-image.exe (executable)
 ========================================================================================================================
