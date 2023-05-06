@@ -1,6 +1,8 @@
 <!-- docs/_sidebar.md -->
 
 - [首页](/README)
+- SpringBoot/SpringCloud
+  - [在spring boot3中使用GraalVM Native Support](springboot/GraalVMNativeSupport.md)
 
 - [Effective Java读书笔记](effectivejava/)
   - [创建和销毁对象](effectivejava/effectivejava1.md)
