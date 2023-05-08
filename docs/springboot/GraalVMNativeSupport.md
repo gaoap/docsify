@@ -299,3 +299,4 @@ LIB=%WK10_LIB%\um\x64;%WK10_LIB%\ucrt\x64;%MSVC%\lib\x64
 
 ![image-20230506172517754](image-20230506172517754.png)
 
+代码地址：[MicroservicesWithAli/MicroservicesWithAli-native-image at main · gaoap/MicroservicesWithAli (github.com)](https://github.com/gaoap/MicroservicesWithAli/tree/main/MicroservicesWithAli-native-image)
